@@ -1,8 +1,5 @@
-using System.Collections.Generic;
-using System.Linq;
 using ToDoApi.Models;
 using Microsoft.EntityFrameworkCore;
-using ToDoApi.Controllers;
 
 namespace ToDoApi.Contexts
 {
@@ -13,7 +10,6 @@ namespace ToDoApi.Contexts
             Database.EnsureCreated();
         }
         public DbSet<ToDo> ToDos { get; set; }
-
         
     }
 }
