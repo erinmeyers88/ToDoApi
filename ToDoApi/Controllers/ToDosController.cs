@@ -52,8 +52,7 @@ namespace ToDoApi.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateToDo(int id, [FromBody] ToDo toDo)
         {
-            
-            var existing =  _context.ToDos.FirstOrDefault(x => x.Id == id);
+            var existing =  _context.ToDos.AsNoTracking().FirstOrDefault(x => x.Id == id);
 
             if (existing == null)
             {
